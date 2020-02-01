@@ -13,6 +13,9 @@ class Author(models.Model):
 class Publisher(models.Model):
     name = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Book(models.Model):
     ISBN = models.CharField(max_length=13)
@@ -23,3 +26,6 @@ class Book(models.Model):
     copy_count = models.SmallIntegerField()
     Publisher_id = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     price = models.FloatField()
+
+    def __str__(self):
+        return self.title

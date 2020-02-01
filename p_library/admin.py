@@ -20,7 +20,11 @@ class BookAdmin(admin.ModelAdmin):
 
     @staticmethod
     def author_full_name(obj):
-        return obj.author.full_name
+        return obj.author.full_name    \
+
+    @staticmethod
+    def author_name(obj):
+        return obj.author.name
 
     list_display = ('title', 'author_full_name',)
     fields = ('ISBN', 'title', 'description', 'year_release', 'author', 'Publisher_id', 'copy_count', 'price')
