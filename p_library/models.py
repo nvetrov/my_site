@@ -32,6 +32,6 @@ class Book(models.Model):
     #
     # def __str__(self):
     #     return self.title
-
+    #
     # def __str__(self):
     #     return self.author.full_name

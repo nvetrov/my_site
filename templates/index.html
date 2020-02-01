@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+<p class="text-primary">Добро пожаловать в {{ title }}.</p>
+<div class="p-3 mb-2 bg-info text-white">Тут собрано {{ books|length }} книг из моей личной коллекции.</div>
 
-Добро пожаловать в {{ title }}. <br>
-Тут собрано {{ books|length }} книг из моей личной коллекции.
 {#{% block content %}#}
 {##}
 {#    #}
