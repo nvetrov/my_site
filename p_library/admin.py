@@ -7,7 +7,12 @@ from p_library.models import Book, Author, Publisher
 
 @admin.register(Author)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('id', 'full_name', 'birth_year', 'country')
+    # list_display = ('id', 'full_name', 'birth_year', 'country')
+    fields = ('full_name', 'birth_year', 'country', )
+
+    @staticmethod
+    def author_full_name(obj):
+        return obj.author.full_name
 
 
 @admin.register(Publisher)
@@ -20,7 +25,7 @@ class BookAdmin(admin.ModelAdmin):
 
     @staticmethod
     def author_full_name(obj):
-        return obj.author.full_name    \
+        return obj.author.full_name
 
     @staticmethod
     def author_name(obj):

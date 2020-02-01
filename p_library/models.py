@@ -9,11 +9,14 @@ class Author(models.Model):
     birth_year = models.SmallIntegerField()
     country = models.CharField(max_length=2)
 
+    def __str__(self):
+        return self.full_name
+
 
 class Publisher(models.Model):
     name = models.TextField(blank=True, null=True)
 
-    def __str__(self):
+    def __str__(self):   # Для того чтобы в ./admin отоборажалоось
         return self.name
 
 
@@ -26,6 +29,9 @@ class Book(models.Model):
     copy_count = models.SmallIntegerField()
     Publisher_id = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     price = models.FloatField()
+    #
+    # def __str__(self):
+    #     return self.title
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.author.full_name

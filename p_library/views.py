@@ -2,16 +2,16 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect
 from p_library.models import Book
+from django.http import Http404
 
 
 def index(request):
     template = loader.get_template('index.html')
     books = Book.objects.all()
-
     biblio_data = {
         "title": "мою библиотеку",
         "books": books,
-    }
+     }
     return HttpResponse(template.render(biblio_data, request))
 
 

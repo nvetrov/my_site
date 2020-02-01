@@ -5,6 +5,21 @@
     <title>navbar</title>
 </head>
 <body>
+<nav>
+    {% for book in books %}
 
+        <ul>
+        <li>{{ book.title }} </li>
+        <li>{{ book.ISBN }}</li>
+        <li>{{ book.description }}</li>
+        <li>{{ book.year_release }}</li>
+        <li>{{ book.author.full_name }}</li>
+        <li>{{ book.author.country }}</li>
+        <li>{{ book.copy_count }}</li>
+        <li>{{ book.Publisher_id }} </li>
+        </ul>
+
+    {% endfor %}
+</nav>
 </body>
 </html>
